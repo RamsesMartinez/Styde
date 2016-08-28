@@ -21,7 +21,38 @@ Route::get('notes', function () {
 
     $notes = Note::all();
 
-    $notes = Note::all();
-
     return view('notes', compact('notes'));
 });
+
+Route::get('notes/create', function (){
+
+return '[Create notes]';
+});
+
+Route::get('notes/{note}/{slug?}', function($note, $slug = null) {
+
+    dd($note, $slug);
+
+})->where('note', '[0-9]+');
+
+/*
+Route::get('notes/{note}', function ($note) {
+
+    return $note;
+});
+*/
+
+// Para condicionar vistas
+/*Route::get('notes/{note}', function ($note) {
+    return $note;
+})->where('note', '[0-9]+');*/
+
+
+// Para deslegar API's
+/*Route::get('notes/create', function () {
+
+    return [
+        'notes' => 'create',
+        'hola' => 'do'
+    ];
+});*/
