@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Styde</div>
+                <div class="title">Notes.dev</div>
             </div>
         </div>
     </body>

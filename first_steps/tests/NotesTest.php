@@ -27,7 +27,7 @@ class NotesTest extends TestCase
             ->click('Add a note')
             ->seePageIs('notes/create')
             ->see('Create a note')
-            ->type('My first note', 'note')
+            ->type('A new note', 'note')
             ->press('Create note')
             ->seePageIs('notes')
             ->see('A new note')
