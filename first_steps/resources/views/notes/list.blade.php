@@ -1,9 +1,6 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <title>Notes</title>
-</head>
-<body>
+@extends('layout')
+
+@section('content')
     <h2>Notes</h2>
     <ul>
         @foreach ($notes as $note)
@@ -18,6 +15,4 @@
             <button type="submit">Create note</button>
         </form>
     </ul>
-
-</body>
-</html>
+@endsection

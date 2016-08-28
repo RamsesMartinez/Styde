@@ -17,21 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('notes', function () {
+Route::get('notes/', function () {
 
     $notes = Note::all();
 
-    return view('notes', compact('notes'));
+    return view('notes/list', compact('notes'));
 });
 
 Route::post('notes', function () {
 
-    return 'Creating a note';
+    return view('notes/create', compact('notes'));
 });
 
 Route::get('notes/create', function (){
 
-return '[Create notes]';
+    return view('notes/create', compact('notes'));
 });
 
 Route::get('notes/{note}/{slug?}', function($note, $slug = null) {
