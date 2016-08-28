@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Note;
 use Illuminate\Http\Request;
 
-use App\Note;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-//use Illuminate\Support\Facades\Redirect;
 
 class NotesController extends Controller
 {
@@ -39,14 +38,19 @@ class NotesController extends Controller
      * @return \Illuminate\Http\Response
      */
     //public function store(Request $request)
-    public function store()
+    public function store(Request $request)
     {
         //return $request->all();
         //return request()->all();
         //return request()->get('note');
         //return request()->only('notes');
 
-        $data = request()->all();
+        $this->validate($request, [
+            'note' => ['required', 'max:200']
+        ]);
+
+        $data = $request->all();
+
         Note::create($data);
 
         //return Redirect::to('notes');
