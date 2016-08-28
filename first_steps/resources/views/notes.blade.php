@@ -11,6 +11,12 @@
                 {{ $note->note }}
             </li>
         @endforeach
+
+         <form method="POST">
+             {!! csrf_field() !!}
+             <textarea></textarea>
+            <button type="submit">Create note</button>
+        </form>
     </ul>
 
 </body>

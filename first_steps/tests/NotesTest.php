@@ -7,6 +7,7 @@ use App\Note;
 
 class NotesTest extends TestCase
 {
+    use WithoutMiddleware;
     public function test_notes_list() {
 
         // having
@@ -18,5 +19,14 @@ class NotesTest extends TestCase
             //then
             ->see('My first note')
             ->see('Second note');
+    }
+
+    public function test_create_note()
+    {
+        // Route::post('notes')
+        // When
+        $this->post('notes')
+            //Then
+            ->see('Creating a note');
     }
 }
